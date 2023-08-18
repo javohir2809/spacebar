@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spacebar Counter</title>
+  <style>
+    /* CSS qismi */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #777;
+    }
+
+    #counter {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spacebar Counter</h1>
+  <p>Bosh joy tugmasini sanab turish uchun sahifada o'ynashiz:</p>
+  <p id="counter">0</p>
+
+  <script>
+    // JavaScript kodini boshqarish uchun <script> tegini ishlatamiz
+    let counter = 0;
+
+    // Sahifaga asoslangan hodisalarni eshitish uchun eventListener qo'shamiz
+    document.addEventListener('keydown', function(event) {
+      // Agar boshtugmasini bosgan bo'lsak va boshtugmasi esa ' ' (bo'sh joy) bo'lsa
+      if (event.keyCode === 32 && event.target === document.body) {
+        counter++; // Sanab tugmasini oshiramiz
+        document.getElementById('counter').textContent = counter; // Sanabni sahifada ko'rsatamiz
+      }
+    });
+  </script>
+</body>
+</html>
